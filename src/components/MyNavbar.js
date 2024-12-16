@@ -1,6 +1,10 @@
+import './MyNavbar.css'
+
 const MyNavbar = () => {
     return (
-        <p>Test navbar</p>
+        <>
+        <img src="./mylogo.png" alt="Website logo" class="logo" />
+        </>
     )
 }
 

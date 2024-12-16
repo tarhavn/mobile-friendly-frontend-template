@@ -1,0 +1,137 @@
+    
+
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  /* Screen reader only */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
+  body {
+    font-family: "Roboto Slab", serif;
+    padding: 0;
+    margin: 0;
+  }
+  header {
+    margin: 2rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    width: 50%;
+  }
+  .hamburger img,
+  .close img {
+    width: 36px;
+    height: 36px;
+  }
+  nav {
+    padding: 1rem;
+    position: absolute;
+    /* a higher z-index put navbar above hamburger */
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+  
+    /* animate slide up/down */
+    transform: translateY(-100%);
+    transition: transform 0.2s ease;
+  }
+  
+  /* :target is called when its anchor id #navbar is called by clicking on the hamburger which has href="#navbar" */
+  
+  nav:target {
+    transform: translateY(0);
+  }
+  
+  nav ul {
+    flex-basis: 80%;
+  }
+  nav a {
+    display: block;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+  }
+  nav a:hover {
+    color: #f0c808;
+  }
+  
+  @media (min-width: 600px) {
+    .logo {
+      width: 35%;
+    }
+   nav {
+      position: static;
+      width: auto;
+      height: auto;
+      overflow: auto;
+      transform: none;
+      transition: none;
+      background-color: transparent;
+      display: block;
+    }
+    .hamburger,
+    .close {
+      display: none;
+    }
+    header {
+      margin: 2rem 0 0 0;
+      text-align: center;
+      display: block;
+    }
+    nav {
+      padding: 0;
+      margin: 0;
+    }
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      margin-top: 2rem;
+      background-color: #00bbf3;
+      border-radius: 0rem;
+    }
+  }
+  @media (min-width: 1000px) {
+    header {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+   .logo {
+      width: 25%;
+    }
+    header nav {
+      flex-basis: 60%;
+    }
+    nav ul {
+      border-radius: 2rem;
+    }
+  }
+  
